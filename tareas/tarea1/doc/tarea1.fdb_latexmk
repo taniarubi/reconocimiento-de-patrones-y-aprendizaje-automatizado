@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1609979326 "/home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.tex" "/home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.pdf" "tarea1" 1609979328
-  "/home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.aux" 1609979328 132 98eef137647af579c50e702ea79e3b35 ""
-  "/home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.tex" 1609979324 7925 53ebcfdc09629a5115313fb5b467a58e ""
+["pdflatex"] 1609982749 "/home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.tex" "/home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.pdf" "tarea1" 1609982750
+  "/home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.aux" 1609982750 132 98eef137647af579c50e702ea79e3b35 ""
+  "/home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.tex" 1609982749 8318 1842d5b14ba2ded9c4ee58ab3cfb1629 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1607249373 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1607249373 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/eccc1095.tfm" 1607249373 3072 1b1df026a15993ee98d265b49cf8d5f2 ""
@@ -90,11 +90,12 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1607249373 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1609913413 5013534 fd35bdaa60a6f086a27ce99b94bb8742 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1609913386 2635857 c32770d40f934e30844f953a5f5893aa ""
-  "tarea1.aux" 1609979328 132 98eef137647af579c50e702ea79e3b35 "pdflatex"
-  "tarea1.tex" 1609979324 7925 53ebcfdc09629a5115313fb5b467a58e ""
+  "imagenes/MSE_Lineal.png" 1609979990 6398 fc488b66fc7234a879902696fcb8543a ""
+  "tarea1.aux" 1609982750 132 98eef137647af579c50e702ea79e3b35 "pdflatex"
+  "tarea1.tex" 1609982749 8318 1842d5b14ba2ded9c4ee58ab3cfb1629 ""
   (generated)
-  "tarea1.pdf"
-  "tarea1.aux"
   "/home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.pdf"
   "tarea1.log"
+  "tarea1.aux"
   "/home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.log"
+  "tarea1.pdf"

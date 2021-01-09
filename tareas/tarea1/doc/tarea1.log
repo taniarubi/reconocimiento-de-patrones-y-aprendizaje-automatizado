@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.6)  6 JAN 2021 18:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.6)  6 JAN 2021 19:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -284,23 +284,29 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 134.
  (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [2] [3] (/home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.aux
+) [2]
+<./imagenes/MSE_Lineal.png, id=22, 204.765pt x 61.73062pt>
+File: ./imagenes/MSE_Lineal.png Graphic file (type png)
+<use ./imagenes/MSE_Lineal.png>
+Package pdftex.def Info: ./imagenes/MSE_Lineal.png  used on input line 203.
+(pdftex.def)             Requested size: 250.24199pt x 75.44498pt.
+ [3 </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/./imagenes/MSE_Lineal.png (PNG copy)>] (/home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.aux
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
 ) ) 
 Here is how much of TeX's memory you used:
- 4439 strings out of 479383
- 60118 string characters out of 5875831
+ 4447 strings out of 479383
+ 60291 string characters out of 5875831
  370702 words of memory out of 5000000
- 21479 multiletter control sequences out of 15000+600000
+ 21484 multiletter control sequences out of 15000+600000
  416308 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,15n,72p,356b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on /home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.pdf (3 pages, 169966 bytes).
+Output written on /home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.pdf (3 pages, 177913 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
+ 68 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
