@@ -157,6 +157,14 @@
         al algoritmo. Normalizar significa, en este caso, comprimir o extender 
         los valores de la variable para que estén en un rango definido.
 
+        El escalador \textbf{MinMaxScaler} transforma las características 
+        escalándolas a un rango dado, por defecto $(0, 1)$, aunque puede ser 
+        personalizado. Este tipo de escalado suele denominarse frecuentemente 
+        como \textit{normalización} de datos.
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{imagenes/norma.png}
+        \end{center}
+
         % Ejercicio 6.c
         \item Separa tu dataset en conjunto de entrenamiento y conjunto de 
         prueba. ¿Por qué hacemos esto?
@@ -174,16 +182,53 @@
         datos disponibles y la seguridad que se necesite en la estimación 
         del error, pero en general dividir el conjunto en un $80-20$ 
         (entrenamiento - prueba) suele dar buenos resultados.
+        \begin{center}
+            \includegraphics[width=0.8\textwidth]{imagenes/train.png}
+        \end{center}
+
+        En este caso, utilizamos la función \texttt{train\_test\_split} para 
+        poder dividir nuestro conjunto de datos en entrenamiento y prueba con 
+        los porcentajes mencionamos anteriormente. 
 
         % Ejercicio 6.d
         \item Encuentra la $k$ óptima para aplicar el algoritmo.
         
-        \textsc{Solución:}
+        \textsc{Solución:} Para elegir el valor óptimo de $k$ podemos utilizar 
+        la tasa de error obtenida sobre el conjunto de prueba, para así elegir 
+        aquella donde encontremos el valor más pequeño. Para lograr esto, 
+        aplicaremos el algoritmo probando varios valores de $k$ y en función de 
+        ello determinaremos aquella que minimice el error en el conjunto de 
+        prueba.
+        \begin{center}
+            \includegraphics[width=0.8\textwidth]{imagenes/k_value.png}
+        \end{center}
+
+        Graficamos los valores obtenidos.
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{imagenes/k_grafica.png}
+        \end{center}
+
+        De esta forma, podemos notar que el valor $k=3$ es el que minimiza el
+        error en el conjunto de prueba, así que aplicaremos el algoritmo con 
+        este valor de $k$.
+        \begin{center}
+            \includegraphics[width=0.5\textwidth]{imagenes/k_modelo.png}
+        \end{center}
+
+        Comparamos los resultados de las predicciones con sus valores 
+        originales.
+        \begin{center}
+            \includegraphics[width=0.2\textwidth]{imagenes/k_predicciones.png}
+        \end{center}
 
         % Ejercicio 6.e
         \item Obtén el MSE del modelo calibrado aplicado al conjunto de prueba.
         
-        \textsc{Solución:}
+        \textsc{Solución:} Para este modelo obtenemos un $MSE$ con valor de 
+        $23.56$.
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{imagenes/k_mse.png}
+        \end{center}
     \end{enumerate}
 
     % Ejercicio 7.
@@ -196,19 +241,55 @@
         % Ejercicio 7.a
         \item ¿Cuál es el MSE del modelo lineal que construiste?
         
-        \textsc{Solución:} El MSE obtenido fue de $7.86$ usando regresión 
-        lineal múltiple.
+        \textsc{Solución:} Construimos la regresión múltiple tomando a las 
+        variables \texttt{Girth, Height} como independientes y a la variable 
+        \texttt{Volume} como dependiente. 
 
+        Separamos nuestro conjunto de datos en entrenamiento y prueba, como 
+        lo hicimos anteriormente.
         \begin{center}
-            \includegraphics[width=0.5\textwidth]{./imagenes/MSE_Lineal.png}
+            \includegraphics[width=0.75\textwidth]{imagenes/train_lineal.png}
+        \end{center}
+
+        Construimos el modelo.
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{imagenes/modelo_lineal.png}
+        \end{center}
+
+        Visualizamos los coeficientes obtenidos del modelo.
+        \begin{center}
+            \includegraphics[width=0.2\textwidth]{imagenes/coef.png}
+        \end{center}
+
+        Esto significa que cuando la variable \texttt{Girth} incrementa en una 
+        unidad (pulgada), entonces \texttt{Volume} incrementa en $4.75$ 
+        unidades (pies cúbicos). De manera análoga, cuando \texttt{Height} 
+        incrementa en una unidad, entonces \texttt{Volume} incrementa en 
+        $0.3$ pies cúbicos. Esto suponiéndo que la otra variable independiente
+        no cambia.
+
+        Luego, realizamos predicciones sobre el conjunto de prueba.
+        \begin{center}
+            \includegraphics[width=0.5\textwidth]{imagenes/pred_lineal.png}
+        \end{center}
+
+        Comparamos los resultados de las predicciones con sus valores originales.
+        \begin{center}
+            \includegraphics[width=0.2\textwidth]{imagenes/predicciones_lineal.png}
+        \end{center}
+
+        Para este modelo obtenemos un $MSE$ con valor de 
+        $7.86$.
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{./imagenes/MSE_Lineal.png}
         \end{center}
 
         % Ejercicio 7.b
         \item Comparando el MSE de este modelo con el del modelo anterior, 
         ¿cuál es menor? ¿a qué piensas que se debe?
 
-        \textsc{Solución:}
-
+        \textsc{Solución:} El menor valor de $MSE$ obtenido fue de $7.86$, 
+        el cual corresponde al modelo creado usando regresión lineal.
     \end{enumerate}
 \end{enumerate}
 \end{document}

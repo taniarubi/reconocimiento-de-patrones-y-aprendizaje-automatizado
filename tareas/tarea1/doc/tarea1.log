@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.6)  6 JAN 2021 19:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.6)  9 JAN 2021 17:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -284,29 +284,92 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 134.
  (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [2]
-<./imagenes/MSE_Lineal.png, id=22, 204.765pt x 61.73062pt>
+)
+<imagenes/norma.png, id=17, 263.48438pt x 70.01157pt>
+File: imagenes/norma.png Graphic file (type png)
+<use imagenes/norma.png>
+Package pdftex.def Info: imagenes/norma.png  used on input line 165.
+(pdftex.def)             Requested size: 200.19054pt x 53.19543pt.
+ [2]
+<imagenes/train.png, id=24, 578.91281pt x 45.92157pt>
+File: imagenes/train.png Graphic file (type png)
+<use imagenes/train.png>
+Package pdftex.def Info: imagenes/train.png  used on input line 186.
+(pdftex.def)             Requested size: 400.38872pt x 31.76018pt.
+<imagenes/k_value.png, id=25, 648.92438pt x 280.79906pt>
+File: imagenes/k_value.png Graphic file (type png)
+<use imagenes/k_value.png>
+Package pdftex.def Info: imagenes/k_value.png  used on input line 203.
+(pdftex.def)             Requested size: 400.38872pt x 173.2581pt.
+<imagenes/k_grafica.png, id=26, 290.58563pt x 189.70876pt>
+File: imagenes/k_grafica.png Graphic file (type png)
+<use imagenes/k_grafica.png>
+Package pdftex.def Info: imagenes/k_grafica.png  used on input line 208.
+(pdftex.def)             Requested size: 200.19054pt x 130.69653pt.
+ [3 </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/imagenes/norma.png (PNG copy)> </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/imagenes/train.png (PNG copy)> </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/imagenes/k_value.png (PNG copy)> </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/imagenes/k_grafica.png (PNG copy)>]
+<imagenes/k_modelo.png, id=30, 385.44pt x 222.07968pt>
+File: imagenes/k_modelo.png Graphic file (type png)
+<use imagenes/k_modelo.png>
+Package pdftex.def Info: imagenes/k_modelo.png  used on input line 215.
+(pdftex.def)             Requested size: 250.24199pt x 144.18063pt.
+<imagenes/k_predicciones.png, id=31, 127.22531pt x 185.94469pt>
+File: imagenes/k_predicciones.png Graphic file (type png)
+<use imagenes/k_predicciones.png>
+Package pdftex.def Info: imagenes/k_predicciones.png  used on input line 221.
+(pdftex.def)             Requested size: 100.09526pt x 146.29884pt.
+<imagenes/k_mse.png, id=32, 196.48407pt x 60.97781pt>
+File: imagenes/k_mse.png Graphic file (type png)
+<use imagenes/k_mse.png>
+Package pdftex.def Info: imagenes/k_mse.png  used on input line 230.
+(pdftex.def)             Requested size: 200.19054pt x 62.13232pt.
+<imagenes/train_lineal.png, id=33, 625.58719pt x 75.28125pt>
+File: imagenes/train_lineal.png Graphic file (type png)
+<use imagenes/train_lineal.png>
+Package pdftex.def Info: imagenes/train_lineal.png  used on input line 251.
+(pdftex.def)             Requested size: 375.36299pt x 45.17139pt.
+<imagenes/modelo_lineal.png, id=34, 243.91125pt x 64.74188pt>
+File: imagenes/modelo_lineal.png Graphic file (type png)
+<use imagenes/modelo_lineal.png>
+Package pdftex.def Info: imagenes/modelo_lineal.png  used on input line 256.
+(pdftex.def)             Requested size: 200.19054pt x 53.13708pt.
+ [4 </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/imagenes/k_modelo.png (PNG copy)> </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/imagenes/k_predicciones.png (PNG copy)> </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/imagenes/k_mse.png (PNG copy)> </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/imagenes/train_lineal.png (PNG copy)>]
+<imagenes/coef.png, id=38, 111.41624pt x 67.75313pt>
+File: imagenes/coef.png Graphic file (type png)
+<use imagenes/coef.png>
+Package pdftex.def Info: imagenes/coef.png  used on input line 261.
+(pdftex.def)             Requested size: 100.09526pt x 60.8697pt.
+<imagenes/pred_lineal.png, id=39, 357.58594pt x 42.1575pt>
+File: imagenes/pred_lineal.png Graphic file (type png)
+<use imagenes/pred_lineal.png>
+Package pdftex.def Info: imagenes/pred_lineal.png  used on input line 273.
+(pdftex.def)             Requested size: 250.24199pt x 29.5023pt.
+<imagenes/predicciones_lineal.png, id=40, 121.95563pt x 181.42781pt>
+File: imagenes/predicciones_lineal.png Graphic file (type png)
+<use imagenes/predicciones_lineal.png>
+Package pdftex.def Info: imagenes/predicciones_lineal.png  used on input line 278.
+(pdftex.def)             Requested size: 100.09526pt x 148.90741pt.
+<./imagenes/MSE_Lineal.png, id=41, 204.765pt x 61.73062pt>
 File: ./imagenes/MSE_Lineal.png Graphic file (type png)
 <use ./imagenes/MSE_Lineal.png>
-Package pdftex.def Info: ./imagenes/MSE_Lineal.png  used on input line 203.
-(pdftex.def)             Requested size: 250.24199pt x 75.44498pt.
- [3 </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/./imagenes/MSE_Lineal.png (PNG copy)>] (/home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.aux
+Package pdftex.def Info: ./imagenes/MSE_Lineal.png  used on input line 284.
+(pdftex.def)             Requested size: 200.19054pt x 60.35522pt.
+ [5 </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/imagenes/modelo_lineal.png (PNG copy)> </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/imagenes/coef.png (PNG copy)> </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/imagenes/pred_lineal.png (PNG copy)> </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/imagenes/predicciones_lineal.png (PNG copy)> </home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/./imagenes/MSE_Lineal.png (PNG copy)>] (/home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.aux
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
 ) ) 
 Here is how much of TeX's memory you used:
- 4447 strings out of 479383
- 60291 string characters out of 5875831
- 370702 words of memory out of 5000000
- 21484 multiletter control sequences out of 15000+600000
- 416308 words of font info for 67 fonts, out of 8000000 for 9000
+ 4522 strings out of 479383
+ 62053 string characters out of 5875831
+ 369702 words of memory out of 5000000
+ 21545 multiletter control sequences out of 15000+600000
+ 417091 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,15n,72p,356b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on /home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.pdf (3 pages, 177913 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on /home/taniarubi/Documents/fciencias/reconocimiento-de-patrones-y-aprendizaje-automatizado/tareas/tarea1/doc/tarea1.pdf (5 pages, 427459 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 90 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
