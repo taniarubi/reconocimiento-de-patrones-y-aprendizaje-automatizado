@@ -43,21 +43,46 @@
     Construye todos los números de este conjunto F.
 
     \textsc{Solución:}
-    \begin{align*}
-        2(\beta - 1) \beta^{l-1} (L - l + 1) + 1
-        &= 2(2 - 1) 2^{-1-1} (2 - (-1) + 1) + 1 \\
-        &= 2(3) 2^{-2} (3 + 1) + 1 \\ 
-        &= 6 \left( \frac{1}{4} \right)\ (4) + 1 \\ 
-        &= \left( \frac{6}{4} \right) 5 \\ 
-        &= \left( \frac{3}{2} \right) 5 \\
-        &= \frac{15}{2}
-    \end{align*}
     
     % Ejercicio 2.
     \item Determina el condicionamiento de la siguiente función:
     \begin{equation*}
         f(x) = \sqrt{x - 1} - \sqrt{x}
     \end{equation*}
+
+    \textsc{Solución:} Primero, calculamos la derivada de la función $f(x)$.
+    \begin{equation*}
+        f'(x) 
+        = \frac{d}{dx} (\sqrt{x - 1} - \sqrt{x}) 
+        = \frac{d}{dx} (\sqrt{x - 1}) - \frac{d}{dx} (\sqrt{x}) 
+        = \frac{1}{2 \sqrt{x - 1}} - \frac{1}{2 \sqrt{x}} 
+    \end{equation*}
+
+    El número de condición de la función $f(x)$ está determinada por 
+    \begin{equation*}
+        C(x) = \left| \frac{x f'(x)}{f(x)} \right|
+    \end{equation*}
+
+    Por lo que, 
+    \begin{align*}
+        C(x) &= \left| \frac{x \left(\frac{1}{2 \sqrt{x - 1}} - 
+                                     \frac{1}{2 \sqrt{x}}\right)}
+                            {\sqrt{x - 1} - \sqrt{x}} \right| \\ 
+             &= \left| \frac{x \left(\frac{1}{2} 
+                                     \left(\frac{1}{\sqrt{x - 1}} - 
+                                           \frac{1}{\sqrt{x}}\right) \right)}
+                            {\sqrt{x - 1} - \sqrt{x}} \right| \\ 
+             &= \left| \frac{x}{2} \frac{\left(\frac{\sqrt{x} - \sqrt{x-1}}
+                                                    {\sqrt{x-1} \sqrt{x}}\right)}
+                            {\sqrt{x - 1} - \sqrt{x}} \right| \\ 
+             &= \left| \frac{x}{2} \left(- \frac{1}
+                                                {\sqrt{x - 1} \sqrt{x}}\right) \right| \\ 
+             &= \left|- \frac{x}{2 \sqrt{x - 1} \sqrt{x}} \right| \\ 
+             &= \frac{x}{2 \sqrt{x - 1} \sqrt{x}} 
+    \end{align*}
+
+    Por lo tanto, el número de condición de la función 
+    $f(x) = \sqrt{x - 1} - \sqrt{x}$ es $\frac{x}{2 \sqrt{x - 1} \sqrt{x}}$. 
 
     % Ejercicio 3.
     \item Implementa los algoritmos de la bisección y de newton en un 
