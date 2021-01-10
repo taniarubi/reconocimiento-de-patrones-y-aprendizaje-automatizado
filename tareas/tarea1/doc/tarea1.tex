@@ -66,6 +66,28 @@
         g(x) = x^3 - x - 1
     \end{equation*}
 
+    \textsc{Solución:} El algoritmo de \texttt{biseccion} fue implementado de 
+    la siguiente manera
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{imagenes/biseccion.png}
+    \end{center}
+
+    Mostramos su funcionamiento con la función $g(x) = x^3 - x - 1$.
+    \begin{center}
+        \includegraphics[width=0.35\textwidth]{./imagenes/biseccion_funcionamiento.png}
+    \end{center}
+
+    Por otro lado, el algoritmo de \texttt{newton} fue implementado de la 
+    siguiente manera
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{imagenes/newton.png}
+    \end{center}
+
+    Mostramos su funcionamiento con la función $g(x) = x^3 - x - 1$.
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{./imagenes/newton_funcionamiento.png}
+    \end{center}
+
     % Ejercicio 4.
     \item Usa los métodos implementados en la pregunta $3$ para encontrar $x^*$
     que soluciona $g(x^*) = 0$ y $h(x^*) = 0$ en las siguientes funciones
@@ -80,6 +102,34 @@
 
     en el intervalo $[1, 2]$. En este caso, la tolerancia debe ser mínimo de 
     $10^{-8}$.
+
+    \textsc{Solución:} Usándo le método de la \texttt{biseccion} obtenemos que 
+    el valor $x^*$ que soluciona 
+    \begin{itemize}
+        \item $g(x) = cos(x) - x$ es $0.7390$.
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{imagenes/biseccion_g(x).png}
+        \end{center}
+
+        \item $h(x) = x^2 - x - 1$ es $1.6180$.
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{imagenes/biseccion_h(x).png}
+        \end{center}
+    \end{itemize}
+
+    Comprobamos los resultados obtenidos con el método de \texttt{newton}, de 
+    tal forma que el valor $x^*$ que soluciona 
+    \begin{itemize}
+        \item $g(x) = cos(x) - x$ es $0.7390$
+        \begin{center}
+            \includegraphics[width=0.45\textwidth]{imagenes/newton_g(x).png}
+        \end{center}
+
+        \item $h(x) = x^2 - x - 1$ es $1.6180$
+        \begin{center}
+            \includegraphics[width=0.45\textwidth]{imagenes/newton_h(x).png}
+        \end{center}
+    \end{itemize}
 
     % Ejercicio 5.
     \item Muestra que el polinomio característico $p(\lambda)$ de una matriz 
