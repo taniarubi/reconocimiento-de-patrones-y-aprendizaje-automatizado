@@ -32,7 +32,7 @@
     \item Considera la siguiente expresión para calcular los elementos de un 
     conjunto de punto flotante 
     \begin{equation*}
-        2(\beta - 1) \beta^{l-1} (L - l + 1) + 1
+        2(\beta - 1) \beta^{p-1} (L - l + 1) + 1
     \end{equation*}
 
     donde $\beta$ es la base, $L$ es el exponente más grande y $l$ el más 
@@ -42,7 +42,91 @@
 
     Construye todos los números de este conjunto F.
 
-    \textsc{Solución:}
+    \textsc{Solución:} Tenemos un total de 
+    \begin{align*}
+        2(\beta - 1) \beta^{p-1} (L - l + 1) + 1
+        &= 2(2 - 1) 2^{3-1} (2 - (-1) + 1) + 1 \\ 
+        &= 2(1) 2^{2} (4) + 1 \\ 
+        &= 8 (4) + 1 \\ 
+        &= 33
+    \end{align*}
+
+    números de punto flotante en este sistema (incluyendo el cero). Por otro 
+    lado, sabemos que si $x \in F$ entonces su opuesto $-x \in F$. Además, 
+    tenemos que el conjunto $F$ está acotado superior e inferiormente por 
+    \begin{equation*}
+        x_{\text{min}} = \beta^{l-1} = 2^{-1-1} = 2^{-2} = \frac{1}{4}
+    \end{equation*}
+    \begin{equation*}
+        x_{\text{max}} 
+        = \beta^L (1 - \beta^{-p}) 
+        = 2^2 (1 - 2^{-3})
+        = \frac{7}{2}
+    \end{equation*}
+
+    Es decir, $x_{\text{min}} = \frac{1}{4}$ es el menor número representable 
+    en el sistema; mientras que $x_{\text{max}} = \frac{7}{2}$ es el máximo 
+    número representable en el conjunto.
+
+    Como los elementos del conjunto $F$, diferentes de cero, son de la forma 
+    $\pm (.a_1 a_2 a_3)_2 \cdot 2^e$ donde 
+    \begin{itemize}
+        \item $a_1 = 1$
+        \item $a_2, a_3 = 0, 1$
+        \item $e = -1, 0, 1, 2$
+    \end{itemize}
+
+    entonces las distintas fracciones positivas son: 
+    \begin{equation*}
+        (.100)_2 
+        = \frac{1}{2} + \frac{0}{2^2} + \frac{0}{2^3}
+        = \frac{1}{2} \quad \quad \quad
+        (.101)_2
+        = \frac{1}{2} + \frac{0}{2^2} + \frac{1}{2^3}
+        = \frac{5}{8}
+    \end{equation*}
+    \begin{equation*}
+        (.110)_2
+        = \frac{1}{2} + \frac{1}{2^2} + \frac{0}{2^3}
+        = \frac{3}{4} \quad  \quad \quad 
+        (.111)_2
+        = \frac{1}{2} + \frac{1}{2^2} + \frac{1}{2^3}
+        = \frac{7}{8}
+    \end{equation*}
+
+    Combinando estas mantisas con los exponentes obtenemos $16$ de los 
+    $33$ números del conjunto $F$, los cuales corresponden a sus números 
+    positivos:
+    \begin{align*}
+        (.100)_2 &\cdot 2^{-1} = \frac{1}{2} \cdot \frac{1}{2} = 
+        \frac{1}{4} 
+        & (.100)_2 &\cdot 2^0 = \frac{1}{2} \cdot 1 = \frac{1}{2}              
+        &  (.100)_2 &\cdot 2^1 = \frac{1}{2} \cdot 2 = 1 \\
+        (.100)_2 &\cdot 2^2 = \frac{1}{2} \cdot 4 = 2 
+        & (.101)_2 &\cdot 2^{-1} = \frac{5}{8} \cdot \frac{1}{2} = 
+        \frac{5}{16}  
+        & (.101)_2 &\cdot 2^0 = \frac{5}{8} \cdot 1 = \frac{5}{8} \\
+        (.101)_2 &\cdot 2^1 = \frac{5}{8} \cdot 2 = \frac{5}{4}
+        & (.101)_2 &\cdot 2^2 = \frac{5}{8} \cdot 4 = \frac{5}{2} 
+        & (.110)_2 &\cdot 2^{-1} = \frac{3}{4} \cdot \frac{1}{2} = 
+        \frac{3}{8} \\
+        (.110)_2 &\cdot 2^0 = \frac{3}{4} \cdot 1 = \frac{3}{4} 
+        & (.110)_2 &\cdot 2^1 = \frac{3}{4} \cdot 2 = \frac{3}{2} 
+        & (.110)_2 &\cdot 2^2 = \frac{3}{4} \cdot 4 = 3 \\
+        (.111)_2 &\cdot 2^{-1} = \frac{7}{8} \cdot \frac{1}{2} 
+        = \frac{7}{16} 
+        & (.111)_2 &\cdot 2^0 = \frac{7}{8} \cdot 1 = \frac{7}{8} 
+        & (.111)_2 &\cdot 2^1 = \frac{7}{8} \cdot 2 = \frac{7}{4} \\ 
+        (.111)_2 &\cdot 2^2 = \frac{7}{8} \cdot 4 = \frac{7}{2}
+    \end{align*}
+
+    Por lo tanto, los $33$ números del conjunto $F$ son:
+    \begin{equation*}
+        0, \pm \frac{1}{4}, \pm \frac{1}{2}, \pm 1, \pm 2, \pm \frac{5}{16},
+        \pm \frac{5}{8}, \pm \frac{5}{4}, \pm \frac{5}{2}, \pm \frac{3}{8}, 
+        \pm \frac{3}{4}, \pm \frac{3}{2}, \pm 3, \pm \frac{7}{16}, 
+        \pm \frac{7}{8}, \pm \frac{7}{4}, \pm \frac{7}{2}
+    \end{equation*}
     
     % Ejercicio 2.
     \item Determina el condicionamiento de la siguiente función:
@@ -155,7 +239,8 @@
             \includegraphics[width=0.45\textwidth]{imagenes/newton_h(x).png}
         \end{center}
     \end{itemize}
-
+    
+    \newpage
     % Ejercicio 5.
     \item Muestra que el polinomio característico $p(\lambda)$ de una matriz 
     $A \in \mathcal{R}^{2 \times 2}$ se puede expresar como 
@@ -326,6 +411,7 @@
             \includegraphics[width=0.75\textwidth]{imagenes/train_lineal.png}
         \end{center}
 
+        \newpage
         Construimos el modelo.
         \begin{center}
             \includegraphics[width=0.4\textwidth]{imagenes/modelo_lineal.png}
