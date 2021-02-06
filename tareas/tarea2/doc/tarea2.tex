@@ -1,0 +1,90 @@
+\documentclass[letterpaper,11pt]{article}
+
+% Soporte para los acentos.
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}    
+% Idioma español.
+\usepackage[spanish,mexico, es-tabla]{babel}
+% Soporte de símbolos adicionales (matemáticas)
+\usepackage{multirow}
+\usepackage{amsmath}		
+\usepackage{amssymb}		
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{enumerate}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{hyperref}
+% Modificamos los márgenes del documento.
+\usepackage[lmargin=2cm,rmargin=2cm,top=2cm,bottom=2cm]{geometry}
+
+\title{Facultad de Ciencias, UNAM \\ 
+       Reconocimiento de patrones y aprendizaje automatizado \\ 
+       Tarea 2}
+\author{Rubí Rojas Tania Michelle}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+    % Ejercicio 1.
+    \item Cada una de las líneas en el documento \texttt{tarea2\_docs.txt} lo 
+    vamos a considerar como un documento. Realiza la limpieza y preprocesamiento 
+    necesarios para contestar las siguientes preguntas:
+    \begin{itemize}
+        % Ejercicio 1.a
+        \item ¿En qué tópicos se pueden dividir?
+
+        % Ejercicio 1.b
+        \item ¿Qué documentos habla de México y su cultura?
+    \end{itemize}
+
+    % Ejercicio 2.
+    \item Descarga el dataset de datos de sonar de la siguiente liga:
+    \url{https://archive.ics.uci.edu/ml/machine-learning-databases/undocumented/
+    connectionist-bench/sonar/sonar.all-data}
+
+    Mismo que deberás explorar y entender lo que hacen sus atributos. 
+    
+    Lleva a cabo una clasificación utilizándo la regresión logística de los 
+    datos. Luego, efectúa una reducción de dimensión y haz tu clasificación 
+    otra vez. La comparación entre las clasificaciones la harás con las 
+    métricas que tú elijas. 
+
+    ¿Qué observas y por qué sucede esto?
+
+    % Ejercicio 3.
+    \item Diseña un experimento para determinar para qué umbral es posible tener 
+    un conjunto de datos no balanceado.
+
+    % Ejercicio 4.
+    \item Reproduce la gráfica de la información mutua del seno contra él mismo 
+    considerándo un corrimiento de $50$ posiciones.
+
+    % Ejercicio 5.
+    \item El dataset de \texttt{seatbelt.csv} representa una serie de datos 
+    temporales de diversos atributos que hacen referencia a la mortalidad 
+    asociada a los accidentes de tránsito en Gran Bretaña en el periodo de 
+    $1969$ y $1984$. La legislación para utilizar el cinturón de seguridad de 
+    manera obligatoria fue introducida el $31$ de enero de $1983$. Ajusta un 
+    modelo lineal generalizado para determinar la probabilidad de morir en 
+    un accidente de tránsito y responde las siguientes preguntas:
+    \begin{itemize}
+        % Ejercicio 5.a
+        \item ¿Volver obligatorio el cinturón de seguridad disminuyó la 
+        probabilidad de morir en algún accidente de tránsito?
+
+        % Ejercicio 5.b
+        \item ¿Qué otra conclusión puedes generar a partir del modelo que 
+        ajustaste? 
+    \end{itemize}
+
+    Se espera que lleves a cabo la normalización o estandarización del 
+    dataset, la transformación de las variables que consideres pertinente y 
+    que propongas qué variables tienen más o menos importancia en la 
+    probabilidad de morir en un accidente de tránsito.
+\end{enumerate}
+
+\end{document}
