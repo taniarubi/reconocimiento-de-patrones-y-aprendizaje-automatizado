@@ -16,6 +16,8 @@
 \usepackage{ragged2e}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
 % Modificamos los márgenes del documento.
 \usepackage[lmargin=2cm,rmargin=2cm,top=2cm,bottom=2cm]{geometry}
 
@@ -54,6 +56,140 @@
     métricas que tú elijas. 
 
     ¿Qué observas y por qué sucede esto?
+
+    \textsc{Solución:} \textbf{sonar.all-data} es un conjunto de datos que 
+    describe el sonido (o más bien, el chirrido) del sonar al rebotar sobre 
+    diferentes superficies. Las $59$ variables de entrada son la fuerza de los 
+    retornos en ángulos diferentes y se encuentran en un rango de $0$ a $1$. La 
+    variable $60$ de salida es un string \textbf{M} para Mina y \textbf{R} para 
+    Roca.
+
+    El problema es de clasificación binaria, la cual requiere de un modelo para 
+    diferenciar rocas de cilindros metálicos.
+
+    Descargamos el conjunto de datos y lo visualizamos.
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{imagenes/sonar-dataset.png}
+    \end{center}
+
+    Veamos si la proporción de los datos en cada clase es equilibrada.
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{imagenes/sonar-equilibrio.png}
+    \end{center}
+
+    donde existen $111$ datos para la clase Mina y $97$ datos para la clase 
+    Roca. Como no hay mucha diferencia entre ambas clases, entonces no es 
+    necesario rebalancear de alguna manera el conjunto de datos. 
+
+    Aunque los metadatos dicen que todos los predictores van de $0$ a $1$, 
+    todavía encontramos que hay varios de ellos que tienen valores relativamente
+    menores en comparación con la mayoría. También encontramos que no hay
+    ningún valor alto más grande que $1$.
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{imagenes/sonar-boxes.png}
+    \end{center}
+
+    La matriz de correlación nos indica que hay alguna estructura en el órden 
+    de los atributos: el color rojo alrededor de la diagonal sugiere que los 
+    atributos que están uno al lado del otro están más correlacionados entre 
+    sí (es decir, cada variable tiene una gran correlación positiva con sus 
+    vecinos), las manchas azules sugieren alguna correlación negativa moderada 
+    entre los atributos que están más alejados unos de otros. Esto tiene 
+    sentido si el órden de los atributos se refiere al ángulo de los sensores 
+    para el chirrido del sonar.
+    \begin{center}
+        \includegraphics[width=0.25\textwidth]{imagenes/sonar-correlacion.png}
+    \end{center}
+
+    Ahora bien, para el procesamiento de datos separamos al conjunto de datos 
+    en dos:
+    \begin{itemize}
+        \item $X$: el cual está conformado por las primeras $59$ columnas del 
+        dataset original.
+        \item $y$: el cual está conformado por la columna $60$ del dataset 
+        original.
+    \end{itemize}
+
+    La gráfica de cajas nos sugiere que debemos estandarizar los datos de 
+    entrada, por lo que usamos la clase \textbf{StandardScaler} para lograr 
+    esto (recordándo que ésta elimina la media y escala los datos de forma que 
+    su varianza sea igual a $1$). 
+
+    La variable de salida (la columna $60$) es un string \textbf{M} o \textbf{R}.
+    Debemos convertirlos en valores enteros entre $0$ y $1$, y para lograr esto 
+    usamos la clase \textbf{LabelEncoder} (la cual modelará la codificación 
+    requerida usando todo el conjunto de datos a traves de la función 
+    \texttt{fit()} y luego aplicará la codificación para crear una nueva variable 
+    de salida usando la función \texttt{transform()}).
+
+    Para crear el modelo de regresión lineal, dividimos nuestro conjunto de datos 
+    ya modificado en entrenamiento ($80\%$) y prueba ($20\%$). Luego, simplemente 
+    creamos una instancia de \\ 
+    \texttt{LogisticRegression}  y lo entrenamos.
+
+    Los resultados obtenidos fueron los siguientes:
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{imagenes/sonar-lg1.png}
+        \includegraphics[width=0.5\textwidth]{imagenes/sonar-lg2.png}
+    \end{center}
+
+    donde en particular podemos notar que 
+    \begin{itemize}
+        \item Obtenemos un $90\%$ de precisión en el conjunto de entrenamiento 
+        y un $88\%$ de precisión en el conjunto de prueba.
+
+        \item Obtenemos MSE de $0.12$ (con un puntaje de varianza de $0.52$).
+
+        \item Obtenemos $86\%$ de precisión para los datos correspondientes a 
+        metales y $90\%$ de precisión para los datos correspondientes a las 
+        rocas.
+    \end{itemize}
+    
+    Por otro lado, usaremos PCA para obtener la lista de atributos que tienen 
+    mayor varianza (mayor poder explicativo). Éstos serán los componentes 
+    principales. Realizamos un par de gráficas para poder determinar el 
+    número de estos componentes.
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.7\textwidth]{imagenes/sonar-pca1.png}
+        \caption{Variance Ratio vs Principal componentes }
+    \end{figure}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.8\textwidth]{imagenes/sonar-pca2.png}
+        \caption{Cumulative variance vs Number of Components}
+    \end{figure}
+
+
+    Donde obtenemos que con $43$ componentes tenemos un $99\%$ de la 
+    varianza explicada (queremos una v.e. entre $95\%$ y $99\%$, pero me ha 
+    gustado más al resultado con este valor). Así, creamos una instancia 
+    de PCA con un número de $43$ componentes principales y la entrenamos, 
+    para después pasarle este nuevo conjunto $X\_pca$ al modelo de 
+    \texttt{LogisticRegression} y entrenarlo.
+
+    Los resultados obtenidos fueron los siguientes:
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{imagenes/sonar-pca3.png}
+        \includegraphics[width=0.5\textwidth]{imagenes/sonar-pca4.png}
+    \end{center}
+
+    donde en particular podemos notar que 
+    \begin{itemize}
+        \item Obtenemos un $90\%$ de precisión en el conjunto de entrenamiento 
+        y un $88\%$ de precisión en el conjunto de prueba.
+
+        \item Obtenemos MSE de $0.12$ (con un puntaje de varianza de $0.52$).
+
+        \item Obtenemos $86\%$ de precisión para los datos correspondientes a 
+        metales y $90\%$ de precisión para los datos correspondientes a las 
+        rocas.
+    \end{itemize}
+
+    Así, podemos concluir que obtenemos la misma precisión que en el modelo 
+    anterior usando $43$ componentes principales ($16$ columnas menos). Esto 
+    puede ser causado por el nivel de correlación que notamos al analizar los 
+    datos.
 
     % Ejercicio 3.
     \item Diseña un experimento para determinar para qué umbral es posible tener 
