@@ -34,13 +34,97 @@
     % Ejercicio 1.
     \item Cada una de las líneas en el documento \texttt{tarea2\_docs.txt} lo 
     vamos a considerar como un documento. Realiza la limpieza y preprocesamiento 
-    necesarios para contestar las siguientes preguntas:
+    necesarios.
+
+    \textsc{Solución:} Leemos el archivo \textbf{tarea\_docs.txt} línea por 
+    línea (ya que cada una de éstas será considerada como un documento) y lo 
+    guardamos en un arreglo. Posteriormente, convertimos este arreglo en un 
+    \texttt{DataFrame} cuya única columna se llamará \texttt{'text'} y cada una 
+    de sus filas contendrá los distintos textos guardados.
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{imagenes/text1.png}
+    \end{center}
+
+    Luego, convertimos cada uno de los documentos en vectores usando TFIDF.
+    \begin{center}
+        \includegraphics[width=0.65\textwidth]{imagenes/text2.png}
+    \end{center}
+
+    Por otro lado, usaremos el algoritmo \textbf{K-means} para agrupar nuestros 
+    datos. De esta forma, para encontrar el valor adecuado de $K$ realizamos una 
+    gráfica e intenamos hallar el \textit{Elbow Curve}, para lo cual ejecutamos 
+    varios \textit{k-means}, incrementamos a $k$ en cada iteración y registramos 
+    el valor del SSE.
+    \begin{center}
+        \includegraphics[width=0.45\textwidth]{imagenes/text4.png}
+    \end{center}
+    \newpage
+    \begin{center}
+        \includegraphics[width=0.35\textwidth]{imagenes/text3.png}
+    \end{center}
+
+    donde podemos notar que en $k=5$ se dobla ligeramente la curva. Así, 
+    ejecutamos \textbf{K-means} con este valor, realizamos nuestras predicciones 
+    y modificamos el \texttt{DataFrame} de tal forma que agregamos la nueva 
+    clasificación encontrada.
+    \begin{center}
+        \includegraphics[width=0.45\textwidth]{imagenes/text5.png}
+    \end{center}
+
+    Como podemos observar, los textos se clasificaron en $5$ grupos diferentes. 
+    Separamos cada texto en un \texttt{DataFrame} distinto para poder visualizar 
+    los resultados.
+    \begin{figure}[ht]
+        \centering
+        {{\includegraphics[width=0.4\textwidth]{imagenes/text7.png}}}%
+        \qquad
+        {{\includegraphics[width=0.4\textwidth]{imagenes/text8.png}}}%
+    \end{figure}
+    \begin{figure}[ht]
+        \centering
+        {{\includegraphics[width=0.4\textwidth]{imagenes/text9.png}}}%
+        \qquad
+        {{\includegraphics[width=0.4\textwidth]{imagenes/text10.png}}}%
+    \end{figure}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.4\textwidth]{imagenes/text6.png}
+    \end{figure}
+
+    Podemos observar que obtuvimos una muy buena agrupación, pues a mi 
+    consideración, sólo agrupó erróneamente un texto (y se encuentra en el 
+    grupo $3$).
+    
+    \newpage
+    Contesta las siguientes preguntas:
     \begin{itemize}
         % Ejercicio 1.a
         \item ¿En qué tópicos se pueden dividir?
 
+        \textsc{Solución:} Se puede dividir en $5$ diferentes tópicos:
+        \begin{itemize}
+            \item Aquellos con la etiqueta $1$, que corresponden a temas 
+            relacionados con el maíz en los pueblos indígenas y la cultura 
+            mexicana.
+
+            \item Aquellos con la etiqueta $2$, que corresponden a temas 
+            relacionados con la física.
+
+            \item Aquel con la etiqueta $3$, que corresponde a la descripción 
+            de lobos (el cual debería de estar relacionado con el texto que 
+            habla del perro del Doctor Dillon, pues hablan de cosas similares).
+
+            \item Aquellos con la etiqueta $4$, que corresponden a temas de 
+            biología molecular.
+
+            \item Aquellos con la etiqueta $0$, que corresponden a descripciones
+            de libros (con un integrante erróneo).
+        \end{itemize}
+
         % Ejercicio 1.b
         \item ¿Qué documentos habla de México y su cultura?
+
+        \textsc{Solución:} Los documentos etiquetados con el número $1$.
     \end{itemize}
 
     % Ejercicio 2.
