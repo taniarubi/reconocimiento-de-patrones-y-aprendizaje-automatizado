@@ -153,9 +153,10 @@
 
     Descargamos el conjunto de datos y lo visualizamos.
     \begin{center}
-        \includegraphics[width=0.8\textwidth]{imagenes/sonar-dataset.png}
+        \includegraphics[width=0.9\textwidth]{imagenes/sonar-dataset.png}
     \end{center}
 
+    \newpage
     Veamos si la proporción de los datos en cada clase es equilibrada.
     \begin{center}
         \includegraphics[width=0.3\textwidth]{imagenes/sonar-equilibrio.png}
@@ -244,7 +245,6 @@
         \caption{Cumulative variance vs Number of Components}
     \end{figure}
 
-
     Donde obtenemos que con $43$ componentes tenemos un $99\%$ de la 
     varianza explicada (queremos una v.e. entre $95\%$ y $99\%$, pero me ha 
     gustado más al resultado con este valor). Así, creamos una instancia 
@@ -279,9 +279,93 @@
     \item Diseña un experimento para determinar para qué umbral es posible tener 
     un conjunto de datos no balanceado.
 
+    \textsc{Solución:} Utilizamos la clase \texttt{make\_classification}, la 
+    cual genera conjuntos de datos a partir de ciertos parámetros que nosotros 
+    podemos modificar. Al crear $9$ distintos datsets, obtenemos las siguientes 
+    gráficas:
+    \begin{figure}[ht]
+        \centering
+        \subfloat[\texttt{100 datos con \{900, 100\}}]
+        {{\includegraphics[width=0.35\textwidth]{imagenes/experimento1.png}}}
+        \qquad
+        \subfloat[\texttt{1000 datos con \{75, 25\}}]
+        {{\includegraphics[width=0.35\textwidth]{imagenes/experimento2.png}}}
+    \end{figure}
+    \begin{figure}[ht]
+        \centering
+        \subfloat[\texttt{10000 datos con \{6000, 4000\}}]
+        {{\includegraphics[width=0.35\textwidth]{imagenes/experimento3.png}}}
+        \qquad
+        \subfloat[\texttt{1000 datos con \{997, 3\}}]
+        {{\includegraphics[width=0.35\textwidth]{imagenes/experimento4.png}}}
+    \end{figure}
+    \begin{figure}[ht]
+        \centering
+        \subfloat[\texttt{200 datos con \{11, 189\}}]
+        {{\includegraphics[width=0.35\textwidth]{imagenes/experimento5.png}}}
+        \qquad
+        \subfloat[\texttt{200 datos con \{57, 130, 13\}}]
+        {{\includegraphics[width=0.35\textwidth]{imagenes/experimento6.png}}}
+    \end{figure}
+    \begin{figure}[ht]
+        \centering
+        \subfloat[\texttt{1000 datos con \{227, 47, 726\}}]
+        {{\includegraphics[width=0.35\textwidth]{imagenes/experimento7.png}}}
+        \qquad
+        \subfloat[\texttt{3575 datos con \{1630, 1945\}}]
+        {{\includegraphics[width=0.35\textwidth]{imagenes/experimento8.png}}}
+    \end{figure}
+
+    \newpage
+    Ahora bien, al estar jugando con varios de los parámetros notamos que 
+    aquellos que verdaderamente influyen para que un conjunto de datos sea 
+    desbalanceado son \textbf{flip\_y} y \textbf{weights} mientras que el resto 
+    de los parámetros sólo parecen influir en las características de los datos 
+    (más no en la distribución de valores en cada clase).
+
+    El parámetro \textbf{weight} sirve para poder asignar la proporción de 
+    valores que tendrá cada una de las clases. De esta forma, si queremos un 
+    conjunto de datos desbalanceado, debemos ajustar estos valores para que 
+    así sea.  Por ejemplo, si tenemos $100$ datos y queremos una proporción 
+    $60-40$ (y tenemos dos clases) entonces debemos escribir 
+    \texttt{weight[0.6,0.4]}.
+
+    La suma de las proporciones no debe ser necesariamente $1$, y en algunos 
+    casos, cuando este valor es mayor a $1$, se regresan más valores de lo 
+    que deberían (y en un experimento pudimos ver que todas las clases toman 
+    casi los mismos valores cuando esto pasa).
+
+    En particular, encontramos que si \textbf{flip\_y} es mayor a $0$ entonces 
+    lo que hace es ir aumentando los valores de las clases (como si se estuviera 
+    balanceando) poco a poco. Con un valor \textbf{flip\_y < 0.5} realmente el 
+    conjunto sigue desbalanceado, pero conforme el valor se acerca a $1$ entonces
+    los valores de las clases se van \textit{balanceando}. Esto último lo podemos 
+    ver con el siguiente conjunto
+    \begin{verbatim}
+        X8, y8 = make_classification(flip_y=1, n_informative=2, n_repeated=0,
+                                     n_clusters_per_class=1, n_samples=4000, 
+                                     shuffle=True, n_features=2, n_redundant=0, 
+                                     random_state=7, class_sep=2, n_classes=2, 
+                                     weights=[0.1, 0.9])
+    \end{verbatim}
+
+    donde podemos observar que a pesar de que las proporciones de los datos son 
+    \texttt{1:9}, gracias a que el valor de \textbf{flip\_y} es igual a $1$, las 
+    proporciones de las clases son totalmente diferentes (pues obtenemos que 
+    los valores son \texttt{\{2065, 1935\}})
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.4\textwidth]{imagenes/experimento9.png}
+    \end{figure}
+
+    \newpage
+    Creo además que el número de clusters también puede influir, pero realmente 
+    desvía los valores de las clases muy pero muy poquito, entonces no afecta 
+    mucho en el umbral que buscamos.
+
     % Ejercicio 4.
-    \item Reproduce la gráfica de la información mutua del seno contra él mismo 
-    considerándo un corrimiento de $50$ posiciones.
+    %\item Reproduce la gráfica de la información mutua del seno contra él mismo 
+    %considerándo un corrimiento de $50$ posiciones.
 
     % Ejercicio 5.
     \item El dataset de \texttt{seatbelt.csv} representa una serie de datos 
