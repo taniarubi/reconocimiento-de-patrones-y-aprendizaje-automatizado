@@ -23,7 +23,8 @@ Durante este curso se realizaron:
    * Tarea 0: Ensayo sobre ¿qué es aprender?
    * Tarea 1: Aritmética de punto flotante, álgebra lineal, métodos numéricos,
    KNN y regresión lineal.
-   * Tarea 2:
+   * Tarea 2: Agrupamientos, reducción de dimensión.
+   * Tarea 3: Agrupamientos.
 
 2. Proyecto
    * Tema: Clasificador de canciones de acuerdo a su género musical.
