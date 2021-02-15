@@ -374,7 +374,11 @@
     $1969$ y $1984$. La legislación para utilizar el cinturón de seguridad de 
     manera obligatoria fue introducida el $31$ de enero de $1983$. Ajusta un 
     modelo lineal generalizado para determinar la probabilidad de morir en 
-    un accidente de tránsito y responde las siguientes preguntas:
+    un accidente de tránsito. Se espera que lleves a cabo la normalización o 
+    estandarización del dataset, la transformación de las variables que 
+    consideres pertinente y que propongas qué variables tienen más o menos 
+    importancia en la probabilidad de morir en un accidente de tránsito.
+    Responde las siguientes preguntas:
     \begin{itemize}
         % Ejercicio 5.a
         \item ¿Volver obligatorio el cinturón de seguridad disminuyó la 
@@ -382,13 +386,158 @@
 
         % Ejercicio 5.b
         \item ¿Qué otra conclusión puedes generar a partir del modelo que 
-        ajustaste? 
+        ajustaste?
+    \end{itemize} 
+
+    \textsc{Solución:} Notemos que nuestro conjunto de datos se ve de la 
+    siguiente forma:
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{imagenes/seat1.png}
+    \end{center}
+
+    el cual contiene $192$ entradas y $8$ atributos. Como la tarea principal 
+    del conjunto de datos se centrará en el antes y el después de la 
+    introducción de la legislación sobre el cinturón de seguridad, es 
+    conveniente dividir el conjunto de datos en dos: 
+    \begin{itemize}
+        \item Uno antes de la legislación (\texttt{law=0}) y, 
+        \item Otro después de la legislación (\texttt{law=1})
     \end{itemize}
 
-    Se espera que lleves a cabo la normalización o estandarización del 
-    dataset, la transformación de las variables que consideres pertinente y 
-    que propongas qué variables tienen más o menos importancia en la 
-    probabilidad de morir en un accidente de tránsito.
+    Contando el número de entradas en cada uno de estos conjuntos obtenemos que 
+    hay $169$ entradas para \texttt{law=0}, mientras que \texttt{law=1} tiene 
+    únicamente $23$ entradas.
+    \begin{center}
+        \includegraphics[width=0.35\textwidth]{imagenes/seat2.png}
+    \end{center}
+
+    Luego, vemos la proporción de conductores fallecidos antes y después de que 
+    usar cinturón de seguridad fuera obligatorio.
+    \begin{itemize}
+        \item Pasajeros al frente y detrás:
+        \begin{itemize}
+            \item Sin ley, la probabilidad es de $0.7415$.
+            \item Con ley, la probabilidad es de $0.6169$.
+        \end{itemize}
+
+        \item Pasajeros al frente:
+        \begin{itemize}
+            \item Sin ley, la probabilidad es de $0.5084$.
+            \item Con ley, la probabilidad es de $0.4319$.
+        \end{itemize}
+
+        \item Pasajeros detrás:
+        \begin{itemize}
+            \item Sin ley, la probabilidad es de $0.2330$.
+            \item Con ley, la probabilidad es de $0.3084$.
+        \end{itemize}
+    \end{itemize}
+
+    Por lo tanto, podemos concluir que efectivamente disminuyó la probabilidad 
+    de morir en un accidente de auto. Podemos notar además que la probabilidad
+    de morir siendo pasajero detrás aumentó con la legislación.
+
+    Por otro lado, para calcular la correlación y la regresión lineal entre dos 
+    factores se utilizó el conjunto de datos \textbf{sinley} (pues tiene la 
+    mayor cantidad de entradas), esto para que los datos no estuvieran sesgados 
+    por los diferentes factores.
+
+    De esta forma, procedemos a calcular la correlación entre los atributos. 
+    \begin{itemize}
+        \item Kilometraje vs Precio de la gasolina
+        
+        Obtenemos una correlación de $0.2454$.
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{imagenes/seat3.png}
+        \end{center}
+
+        Donde, a pesar de esperar que la correlación fuera negativa (pues a 
+        mayor precio de la gasolina, menos distancia se recorrería); se obtuvo 
+        un valor positivo.
+
+        \newpage
+        \item Pasajeros al frente vs número de fallecidos.
+
+        Obtenemos una correlación de $0.6808$.
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{imagenes/seat4.png}
+        \end{center}
+
+        \item Pasajeros en los asientos traseros vs número de fallecidos.
+
+        Obtenemos una correlación de $0.6981$.
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{imagenes/seat5.png}
+        \end{center}
+
+        \item Kilometraje vs número de fallecidos.
+
+        Obtenemos una correlación de $-0.1914$.
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{imagenes/seat6.png}
+        \end{center}
+
+        \item Precio de la gasolina vs número de fallecidos.
+
+        Obtenemos una correlación de $-0.3120$.
+        \begin{center}
+            \includegraphics[width=0.35\textwidth]{imagenes/seat7.png}
+        \end{center}
+
+        \item Número de furgonetas vs número de fallecidos.
+
+        Obtenemos una correlación de $0.3382$.
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{imagenes/seat8.png}
+        \end{center}
+    \end{itemize}
+
+    Notemos que las variables independientes parecen ser Kms, PetrolPrice, 
+    Front y Rear, mientras que la variable dependiente será DriversKilled.
+
+    Después, definimos dos nuevos conjuntos:
+    \begin{itemize}
+        \item $X$: correspondiente a las variables independientes.
+        \item $y$: correspondiente a la variable dependiente.
+    \end{itemize}
+
+    Y separamos nuestro conjunto en prueba y entrenamiento en un $20-80$, 
+    respectivamente. Creamos una instancia del algoritmo 
+    \texttt{LinearRegression}, y lo entrenamos.
+
+    Los coeficientes obtenidos son:
+    \begin{center}
+        \includegraphics[width=0.25\textwidth]{imagenes/seat9.png}
+    \end{center}
+
+    Esto significa que, 
+    \begin{itemize}
+        \item Cuando \texttt{DriverKilled} incrementa una unidad, entonces 
+        \texttt{front} incrementa $0.170932$ unidades.
+
+        \item Cuando \texttt{DriverKilled} incrementa una unidad, entonces 
+        \texttt{rear} disminuye $-0.107635$ unidades.
+
+        \item Cuando \texttt{DriverKilled} incrementa una unidad, entonces 
+        \texttt{kms} incrementa $0.000775$ unidades.
+
+        \item Cuando \texttt{DriverKilled} incrementa una unidad, entonces 
+        \texttt{PetrolPrice} incrementa $117.617962$ unidades.
+    \end{itemize}
+
+    \newpage
+    Realizando nuestras predicciones, obtenemos los siguientes resultados:
+    \begin{center}
+        \includegraphics[width=0.25\textwidth]{imagenes/seat10.png}
+    \end{center}
+
+    y visualizamos la precisión de nuestro modelo:
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{imagenes/seat11.png}
+    \end{center}
+
+    A partir de esto, podemos concluir que el modelo realiza predicciones 
+    considerablemente buenas. 
 \end{enumerate}
 
 \end{document}
